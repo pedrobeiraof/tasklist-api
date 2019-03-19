@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.ListCreateTaskView.as_view()),
     path('<int:pk>', views.RetrieveUpdateTaskView.as_view()),
     path('<int:pk>/update-status', views.UpdateTaskStatusView.as_view()),
+    path('<int:pk>/delete', views.DeleteTaskView.as_view()),
 ]

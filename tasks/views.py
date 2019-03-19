@@ -1,6 +1,6 @@
 from django.db import transaction
 from rest_framework.views import APIView
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView, DestroyAPIView
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
 from django.forms.models import model_to_dict
@@ -28,3 +28,7 @@ class UpdateTaskStatusView(APIView):
             task.save()
             return Response(status=200, data=model_to_dict(task))
         return Response(status=400)
+
+
+class DeleteTaskView(DestroyAPIView):
+    queryset = models.Task.objects.all()

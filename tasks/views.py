@@ -2,15 +2,12 @@ from django.db import transaction
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
-from . import models, serializers
+from . import models, serializers, enums
 
 
 class ListCreateTask(ListCreateAPIView):
-    serializer_class = serializers.ListTask
+    serializer_class = serializers.ListCreateTask
     queryset = models.Task.objects.filter(deleted_at__isnull=True).all()
-
-    def create(self, request, *args, **kwargs):
-        return super().create(request, *args, **kwargs)
 
 
 class RetrieveUpdateTask(RetrieveUpdateAPIView):

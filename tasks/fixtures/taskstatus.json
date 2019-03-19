@@ -1,0 +1,26 @@
+[
+{
+  "model": "tasks.taskstatus",
+  "pk": 1,
+  "fields": {
+    "description": "To do",
+    "color": "#fbc200"
+  }
+},
+{
+  "model": "tasks.taskstatus",
+  "pk": 2,
+  "fields": {
+    "description": "Doing",
+    "color": "#3ea732"
+  }
+},
+{
+  "model": "tasks.taskstatus",
+  "pk": 3,
+  "fields": {
+    "description": "Done",
+    "color": "#eeeff1"
+  }
+}
+]

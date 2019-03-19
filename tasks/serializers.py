@@ -14,3 +14,10 @@ class ListCreateTask(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['status_id'] = enums.TaskStatus.TO_DO
         return super().create(validated_data)
+
+
+class RetrieveTask(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Task
+        fields = ('title', 'description')

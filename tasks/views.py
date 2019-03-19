@@ -13,11 +13,8 @@ class ListCreateTaskView(ListCreateAPIView):
 
 
 class RetrieveUpdateTaskView(RetrieveUpdateAPIView):
-    # serializer_class = serializers.RetrieveTask
+    serializer_class = serializers.RetrieveTask
     queryset = models.Task.objects.all()
-
-    def perform_update(self, serializer):
-        return super().perform_update(serializer)
 
 
 class UpdateTaskStatusView(APIView):

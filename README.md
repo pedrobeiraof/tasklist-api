@@ -25,7 +25,7 @@ workon tasklist
 
 ### Configure env variables
 
-* To speed up the testing process the env file will already be configured on the project
+* To speed up the testing process the env file will temporarily be configured on the project
 
 ### download project dependencies
 

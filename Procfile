@@ -1,0 +1,1 @@
+web: gunicorn tasklist_api.wsgi --log-file -

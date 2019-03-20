@@ -8,7 +8,7 @@ class TaskStatus(models.Model):
 class Task(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    status = models.ForeignKey(TaskStatus, models.PROTECT)
+    status = models.ForeignKey(TaskStatus, models.PROTECT, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)

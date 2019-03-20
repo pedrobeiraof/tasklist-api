@@ -1,4 +1,5 @@
 from django.db import transaction
+from rest_framework.filters import SearchFilter
 from rest_framework.views import APIView
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateAPIView, DestroyAPIView
 from rest_framework.response import Response
@@ -10,6 +11,8 @@ from . import models, serializers, enums
 class ListCreateTaskView(ListCreateAPIView):
     serializer_class = serializers.ListCreateTask
     queryset = models.Task.objects.filter(deleted_at__isnull=True).all()
+    filter_backends = (SearchFilter,)
+    search_fields = ('title', 'description')
 
 
 class RetrieveUpdateTaskView(RetrieveUpdateAPIView):
